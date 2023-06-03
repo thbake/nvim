@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
   -- Colorschemes
   use 'folke/tokyonight.nvim'
   use "ellisonleao/gruvbox.nvim"
+  use 'sainnhe/everforest'
 
   -- Neovim statusline
   use {
@@ -61,6 +62,6 @@ return require('packer').startup(function(use)
 
   use "untitled-ai/jupyter_ascending.vim"
 
-
+  use { "JuliaEditorSupport/julia-vim" }
 
 end)

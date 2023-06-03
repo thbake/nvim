@@ -19,4 +19,4 @@ opt.colorcolumn    = "80"
 opt.updatetime     = 50
 vim.g.mapleader    = " "
 
-
+syntax = true

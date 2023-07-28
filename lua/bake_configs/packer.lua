@@ -4,64 +4,59 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-  
-  -- Colorschemes
-  use 'folke/tokyonight.nvim'
-  use "ellisonleao/gruvbox.nvim"
-  use 'sainnhe/everforest'
+	-- Packer can manage itself
+	use "wbthomason/packer.nvim"
 
-  -- Neovim statusline
-  use {
+	-- Colorschemes
+	use "folke/tokyonight.nvim"
+	use "ellisonleao/gruvbox.nvim"
+	use "sainnhe/everforest"
+	use "rebelot/kanagawa.nvim"
+
+	-- Neovim statusline
+	use {
 		  "nvim-lualine/lualine.nvim",
 		  requires = { "kyazdani42/nvim-web-devicons", opt = true }
 
-  }
-  use { -- I couldn't live without this plugin
+	}
+	use { -- I couldn't live without this plugin
 		  'ThePrimeagen/harpoon',
 		  requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  use { -- File finder
+	}
+	use { -- File finder
 		  'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		  requires = { {'nvim-lua/plenary.nvim'} }
 
-  }
-  -- LSP plugins
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  requires = {
-		-- LSP Support
-		{'neovim/nvim-lspconfig'},
-		{'williamboman/mason.nvim'},
-		{'williamboman/mason-lspconfig.nvim'},
+	}
+	-- LSP plugins
+	use "neovim/nvim-lspconfig"
 
-		-- Autocompletion
-		{'hrsh7th/nvim-cmp'},
-		{'hrsh7th/cmp-buffer'},
-		{'hrsh7th/cmp-path'},
-		{'saadparwaiz1/cmp_luasnip'},
-		{'hrsh7th/cmp-nvim-lsp'},
-		{'hrsh7th/cmp-nvim-lua'},
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-path"
+	use "hrsh7th/nvim-cmp"
+	use "L3MON4D3/LuaSnip"
+	use "saadparwaiz1/cmp_luasnip"
 
-		-- Snippets
-		{'L3MON4D3/LuaSnip'},
-		{'rafamadriz/friendly-snippets'},
-	  }
-  }
 
-  use { -- Autopairs (braces, brackets, etc)
-		  "windwp/nvim-autopairs",
-		  config = function() require("nvim-autopairs").setup {} end
-  }
-  use "vim-test/vim-test" -- Testing
+	-- Treesitter
+	use {
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({
+				with_sync = true
+			})
+			ts_update()
+		end,
+	}
 
-  use "ThePrimeagen/vim-be-good"
+	use { -- Autopairs (braces, brackets, etc)
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
 
-  use ("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
+	-- LSP Support
 
-  use "untitled-ai/jupyter_ascending.vim"
-
-  use { "JuliaEditorSupport/julia-vim" }
+	use { "JuliaEditorSupport/julia-vim" }
 
 end)

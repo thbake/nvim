@@ -1,11 +1,15 @@
 require("tokyonight").setup({
 		style = "moon",
-		transparent = true
+		transparent = false,
 })
 
 require("gruvbox").setup({
 		contrast = "hard",
-		transparent_mode = true
+		transparent_mode = false
+})
+
+require("kanagawa").setup({
+	terminalColors = true
 })
 
 --local everforest_config = vim.api.nvim_exec(
@@ -20,4 +24,4 @@ let g:everforest_background = 'hard'
 ]])
 
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme kanagawa]]

@@ -24,7 +24,7 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Paste word over highlighted expression without losing work on paste buffer
-keymap.set("x", "<leader>p", "\"_dP") 
+keymap.set("x", "<leader>p", "\"_dP")
 
 -- Apply changes made in visual mode for multiple lines
 keymap.set("i", "<C-c>", "<Esc>")

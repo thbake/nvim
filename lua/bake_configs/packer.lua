@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
 		  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use { -- File finder
-		  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		  'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		  requires = { {'nvim-lua/plenary.nvim'} }
 
 	}
@@ -38,6 +38,10 @@ return require('packer').startup(function(use)
 	use "L3MON4D3/LuaSnip"
 	use "saadparwaiz1/cmp_luasnip"
 
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
+
+	use {'kaarmu/typst.vim', ft = {'typst'}}
 
 	-- Treesitter
 	use {

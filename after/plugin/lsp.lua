@@ -63,6 +63,14 @@ lspconfig.julials.setup {
         end
     end
 }
+lspconfig.typst_lsp.setup {  -- For typst_lsp to work, initialize git repo 
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		exportPdf = "onType",
+	}
+}
+lspconfig.texlab.setup{}
 
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 

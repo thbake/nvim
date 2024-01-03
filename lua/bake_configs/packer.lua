@@ -60,7 +60,9 @@ return require('packer').startup(function(use)
 	}
 
 	-- LSP Support
-
 	use { "JuliaEditorSupport/julia-vim" }
+
+	-- Others
+	use {"shortcuts/no-neck-pain.nvim", tag = "*"}
 
 end)
